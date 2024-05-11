@@ -6,8 +6,23 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:07:39 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/11 18:07:39 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/11 18:11:06 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- 
+int main(int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc == 2)
+	{
+		while (argv[1][i] == 32 || argv[1][i] == 9)
+			i++;
+		while ((argv[1][i] != 32 && argv[1][i] != 9) && argv[1][i])
+		{
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+}
